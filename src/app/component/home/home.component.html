@@ -1,0 +1,33 @@
+
+<div class="container font-Proza ">
+    <form action="" method="post" >
+    <div class=" main w-72 h-12 cursor-pointer flex flex-row items-center bg-shan-400  border-2 border-solid border-shan-500">
+
+        <div class="flex marker:flex-row items-center justify-start ml-5"   (click)="dropdownOpen()">
+            <img  class="h-auto w-6 mr-3 "  src="{{srcvaribale}}" alt="{{altvariable}}">
+
+            <fa-icon class="" [icon]="faCaretDown"></fa-icon>
+            
+        </div>
+            
+        <div class="flex items-center justify-center align-middle ml-7 ">
+        <span class="prefix cursor-default">{{countryPin}}</span>
+        <input class=" outline-none appearance-none bg-transparent border-none basis-16 bg-none py-3 m-0   " type="number" #myText (input)="onInput(myText.value)" required  >
+      </div>
+    </div>
+    
+
+
+
+
+    <div class="content w-72  cursor-pointer p-3 border-t-0 border-2 border-solid border-shan-500 " *ngIf="contentdropdown">
+        <ul class="p-0 m-0"> 
+            <li class="list-none p-2 text-base flex flex-row items-center hover:bg-shan-400" *ngFor="let each of array" (click)="changeFlag(each)"  >
+                <img class="h-auto w-6 mr-3"  src="{{each.src}}" alt="IMG1">
+                 <span >{{each.name}} <span class="text-gray-500">{{each.pin}}</span> </span> 
+            </li>
+          
+        </ul>
+    </div>
+    </form>
+</div>
